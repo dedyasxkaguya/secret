@@ -1,0 +1,16 @@
+.heart{
+    position: fixed;
+    bottom: 0;
+}
+footer{
+    background-image: linear-gradient(to top , #fff ,transparent);
+    width: 100dvw;
+    height: 16dvh;
+    position: fixed;
+    bottom: 0;
+}
+@keyframes up {
+    to{
+        bottom: 256%;
+    }
+}
