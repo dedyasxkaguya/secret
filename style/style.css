@@ -1,6 +1,54 @@
+body{
+    width: 100dvw;
+    height: 100dvh;
+    overflow-x: hidden;
+}
 .heart{
     position: fixed;
     bottom: 0;
+    filter: drop-shadow(0 2px 2px #ffdafc);
+}
+#main{
+    width: 60dvw;
+    height: fit-content;
+    background-color: rgba(255, 255, 255, .6);
+    backdrop-filter: blur(6px);
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,-50%);
+    z-index:2;
+    position: fixed;
+    opacity: 0;
+    animation: fade-up 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+.imgBox{
+    background-color: pink;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    overflow: hidden;
+    max-height: 50%;
+}
+.imgBox img{
+    max-width: 80%;
+    filter: drop-shadow(2px 8px 8px #f991cc);
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.imgBox img:hover{
+    scale: 1.1;
+    filter: drop-shadow(2px 8px 8px #ffdafc);
+    transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.text{
+    background-color: rgba(255, 255, 255, .6);
+    /* height: fit-content; */
+}
+
+.btn{
+    background-color: pink;
+    color: white;
+}
+.btn:hover{
+    opacity: .7;
 }
 footer{
     background-image: linear-gradient(to top , #fff ,transparent);
@@ -12,5 +60,11 @@ footer{
 @keyframes up {
     to{
         bottom: 256%;
+    }
+}
+@keyframes fade-up {
+    to{
+        top: 50%;
+        opacity: 1;
     }
 }
