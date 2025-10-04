@@ -29,7 +29,7 @@ body {
 .msgBox{
     background-color: rgba(255, 255, 255, .6);
 }
-.firstBox,
+/* .firstBox, */
 .secondBox,
 .thirdBox {
     display: none;

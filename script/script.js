@@ -9,7 +9,7 @@ const hello = () => {
         confirmButtonText: 'Yes i Am ded'
     })
 }
-// hello()
+hello()
 const addHeart = () => {
     const x = (Math.random() * 100) - 100
     const y = Math.random() * 100
