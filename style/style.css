@@ -1,70 +1,125 @@
-body{
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     width: 100dvw;
-    height: 100dvh;
+    min-height: 100dvh;
     overflow-x: hidden;
 }
-.heart{
+
+.heart {
     position: fixed;
     bottom: 0;
     filter: drop-shadow(0 2px 2px #ffdafc);
 }
-#main{
-    width: 60dvw;
+
+#main {
+    width: fit-content;
     height: fit-content;
-    background-color: rgba(255, 255, 255, .6);
     backdrop-filter: blur(6px);
     left: 50%;
     top: 100%;
-    transform: translate(-50%,-50%);
-    z-index:2;
+    transform: translate(-50%, -50%);
+    z-index: 2;
     position: fixed;
     opacity: 0;
     animation: fade-up 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
-.imgBox{
+.msgBox{
+    background-color: rgba(255, 255, 255, .6);
+}
+.firstBox,
+.secondBox,
+.thirdBox {
+    display: none;
+}
+
+.imgBox {
     background-color: pink;
-    aspect-ratio: 1/1;
     object-fit: contain;
     overflow: hidden;
+    aspect-ratio: 1/1;
+    max-width: 50%;
     max-height: 50%;
 }
-.imgBox img{
+
+.imgBox img {
     max-width: 80%;
     filter: drop-shadow(2px 8px 8px #f991cc);
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.imgBox img:hover{
+
+.imgBox img:hover {
     scale: 1.1;
     filter: drop-shadow(2px 8px 8px #ffdafc);
     transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.text{
+
+.text {
     background-color: rgba(255, 255, 255, .6);
     /* height: fit-content; */
 }
 
-.btn{
+.btn {
+    background-color: pink;
+    color: white;
+    transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.prevBtn {
+    background-color: white;
+    color: pink;
+    border: 2px solid;
+}
+
+.btn:hover {
+    transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: .7;
+}
+
+.prevBtn:hover {
     background-color: pink;
     color: white;
 }
-.btn:hover{
-    opacity: .7;
+/* //section 2 */
+.galeryBox{
+    overflow: hidden;
 }
-footer{
-    background-image: linear-gradient(to top , #fff ,transparent);
+.galery img{
+    filter: grayscale(1) blur(1px);
+    transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.galery img:hover{
+    scale: 1.1;
+    filter: none;
+}
+footer {
+    background-image: linear-gradient(to top, #fff, transparent);
     width: 100dvw;
     height: 16dvh;
     position: fixed;
     bottom: 0;
 }
+
 @keyframes up {
-    to{
+    to {
         bottom: 256%;
     }
 }
+
 @keyframes fade-up {
-    to{
+    to {
         top: 50%;
         opacity: 1;
+    }
+}
+@media (max-width:1080px) {
+    #main{
+        min-height: fit-content;
+        min-width: 80dvw;
+    }
+    .msgBox{
+        flex-direction: column;
     }
 }
