@@ -1,0 +1,33 @@
+.shareDiv{
+    width: 50dvh;
+    min-height: 50dvh;
+    background-color: rgba(255, 255, 255, .9);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9;
+}
+.shareDiv img{
+    background-color: #fff;
+}
+.downloadBtn{
+    background-color: #ffdafc;
+}
+.shareBtn{
+    background-color: #f991cc;
+    color: white;
+}
+.closeBtn{
+    aspect-ratio: 1/1;
+    width: auto;
+}
+.imageBox{
+    background-color: #ffdafc;
+    overflow: hidden;
+}
+.memory img{
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}

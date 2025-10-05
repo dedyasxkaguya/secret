@@ -1,3 +1,4 @@
+const main = document.getElementById("main")
 const heartBox = document.getElementById("heartBox")
 const btn = document.querySelectorAll(".nextBtn")
 const prevBtn = document.querySelectorAll(".prevBtn")
@@ -9,9 +10,9 @@ const hello = () => {
         confirmButtonText: 'Yes i Am ded'
     })
 }
-hello()
+// hello()  
 const addHeart = () => {
-    const x = (Math.random() * 100) - 100
+    const x = (Math.random() * 100) - 256
     const y = Math.random() * 100
     const scale = 1 + (Math.random())
     const random = Math.random() * 100
@@ -53,10 +54,17 @@ const addHeart = () => {
     heartBox.appendChild(heart)
 }
 let i = 0
-
+let x = 0
 while (i <= 87) {
     addHeart()
     i++
+    if(i==87){
+        setInterval(() => {
+            addHeart()
+            addHeart()
+            addHeart()
+        }, 561);
+    }
 }
 btn.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -74,7 +82,7 @@ btn.forEach((btn) => {
                     html: 'Its already the end of the message <br> Would you like to continue 🦌',
                     confirmButtonText: "Yes i do"
                 })
-
+                main.style.display='none'
             }
         } catch {
             console.error("Tidak bisa jendral")
